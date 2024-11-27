@@ -243,7 +243,81 @@ increasing number of satellites launching each year (Statista, 2024). This would
 
         </pre>
 </p>
-      
+
+          
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div style="width: 80%; margin: auto;">
+        <canvas id="satelliteChart"></canvas>
+    </div>
+
+    <script>
+        // Data for the chart
+        const years = [1960, 1970, 1980, 1990, 2000, 2010, 2020, 2025];
+        const satellites = [0, 5, 25, 100, 500, 1200, 3600, 9000];
+
+        // Chart.js configuration
+        const ctx = document.getElementById('satelliteChart').getContext('2d');
+        const satelliteChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: years,
+                datasets: [
+                    {
+                        label: 'Number of Active Satellites',
+                        data: satellites,
+                        borderColor: 'blue',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.4, // Add some curve to the line
+                        pointStyle: 'circle',
+                        pointRadius: 5
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Year'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Number of Active Satellites'
+                        },
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    annotation: {
+                        annotations: {
+                            equation: {
+                                type: 'label',
+                                xValue: 2020,
+                                yValue: 4000,
+                                content: ['y = 3E-71 * e^(0.0845x)', 'R² = 0.7995'],
+                                font: {
+                                    size: 12
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+
+
+
+
+          
        <body style="background-color:#FFFFFF;margin-left:25px;">
 
   <h3 id="Refrences">Refrences</h3>
