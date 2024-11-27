@@ -249,9 +249,8 @@ function drawChart() {
 var data = new google.visualization.DataTable();
 
 
-data.addColumn('number''Year,
-'Age');
-data.addColumn('number', 'Number of Satelites');
+data.addColumn('number','Year');
+data.addColumn('number','Number of Satelites');
 data.addRows([
 [1960, 25],
 [1970, 59],
@@ -261,11 +260,11 @@ data.addRows([
 [2005, 1139],
 [2010, 1737],
 [2015, 2651],
-  [2018, 4315],
-  [2020, 4044],
-  [2021, 4401],
-  [2022, 4789],
-  [2023, 5211],
+[2018, 4315],
+[2020, 4044],
+[2021, 4401],
+[2022, 4789],
+[2023, 5211],
 ]);
 var options = {
 title: 'Number of Active Satellites using a Power Trend Line',
