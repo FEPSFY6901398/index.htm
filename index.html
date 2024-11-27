@@ -245,8 +245,8 @@ increasing number of satellites launching each year (Statista, 2024). This would
 </p>
 
           <script type="text/javascript">
-function drawChart() {
-  var data = new google.visualization.DataTable();
+            function drawChart() {
+              var data = new google.visualization.DataTable();
 
 
 data.addColumn('number','Year');
@@ -269,12 +269,11 @@ data.addRows([
 ]);
 var options = {
 title: 'Number of Active Satellites using a Power Trend Line',
-hAxis: { title: 'Year' },
-vAxis: { title: 'Number of Satellites'}
+xAxis: { title: 'Year' },
+yAxis: { title: 'Number of Satellites'}
 };
 var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
-  chart.draw(data, options);
-  
+  chart.draw(data,options);
 }
 </script
 
